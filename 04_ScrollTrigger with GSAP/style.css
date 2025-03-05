@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+#page1, #page2, #page3 {
+    width: 100%;
+    height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page1 { background-color: yellow; }
+#page2 { background-color: pink; }
+#page3 { background-color: black; }
+
+#box1 {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
