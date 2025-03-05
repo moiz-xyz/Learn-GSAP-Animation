@@ -46,5 +46,4 @@ gsap.to("#box2", {
     borderRadius : "50%" ,
     // changes the size of box
     scale :0.5
-
 })
