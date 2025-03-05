@@ -1,3 +1,16 @@
+let html_content = document.getElementById("main");
+html_content.innerHTML = `
+<div id="page1">
+        <div id="box1"></div>
+    </div>
+    <div id="page2">
+        <div id="box1"></div>
+    </div>
+    <div id="page3">
+        <div id="box1"></div>
+    </div>
+`
+
 gsap.to("#page1 #box1",{
 scale : 0,
 duration : 3,
