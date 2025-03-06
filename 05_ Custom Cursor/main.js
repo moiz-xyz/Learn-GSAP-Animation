@@ -1,4 +1,9 @@
 let main = document.getElementById("main");
+main.innerHTML = `
+<div id="cursor">
+
+        </div>
+`
 let cursor  = document.getElementById("cursor");
 
 main.addEventListener("mousemove" , (events) =>{
