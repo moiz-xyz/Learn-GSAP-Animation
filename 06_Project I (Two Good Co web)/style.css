@@ -1,0 +1,47 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+}
+#page1{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 0 1vw;
+    padding-top: 20vh;
+}
+#page1 > h1 {
+    font-size: 15.8vw;
+    font-family: futura;
+    text-transform: uppercase;
+    line-height: 13vw;
+    letter-spacing: -8px;
+}
+#video-catiner{
+    height: 100vh;
+    width: 100%;
+    margin-top: 1vw;
+    position: relative;
+}
+#play{
+    padding: 2vw 1.5vw;
+    background-color: black;
+    color: white;
+    position: fixed;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: futura;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+}
+#video-catiner > video{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
