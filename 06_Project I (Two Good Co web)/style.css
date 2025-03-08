@@ -82,6 +82,7 @@ object-fit: cover;
 #page2  hr {
     width: 100%;
     margin: 80px auto;
+    font-weight: bolder;
 }
 
 #page3 {
@@ -96,4 +97,52 @@ object-fit: cover;
 #page3 .elem {
     width: 31%;
     height: 100%;
+}
+@media (max-width :600px) {
+    #page1 {
+        width: 100%;
+        min-height: 70vh;
+        padding: 0 3vw;
+        padding-top: 25vh;
+    }
+    #page1 > h1 {
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    }
+    #video-catiner{
+        height: 25vh;
+        margin-top: 3vw;
+        
+    }
+    #play{
+       display: none;
+    }
+    
+    #page2 > div h3 {
+        font-family: futura;
+        font-size: 10vw;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        padding-top: 3%;
+    }
+    
+    #page2 > div p {
+        font-family: sans-serif;
+        font-size: 4vw;
+        margin-top: 10px;
+    }
+    
+    #page2 > div h6 {
+        font-family: sans-serif;
+        font-size: 3vw;
+        margin-top: 20px;
+    }
+    
+    #page2  hr {
+        width: 100%;
+        margin: 80px auto;
+    }
+    
+
+
 }

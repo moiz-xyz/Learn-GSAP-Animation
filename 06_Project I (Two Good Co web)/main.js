@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 let videoAnimation = ()=>{
     let video_catiner = document.getElementById("video-catiner");
     let playbtn = document.getElementById("play");
@@ -41,20 +42,50 @@ let loadingFunction = ()=>{
 }
 loadingFunction()
 
-let page2_h3Animation = ()=>{
-gsap.from("#head h3", {
-    y: 100, 
-    opacity: 0, 
-    duration: 0.8, 
-    delay: 0.5,
-    ease: "power3.out",
-    scrollTrigger: {
-        trigger: "#head h3", // Element that triggers animation
-        start: "top 80%", // When the top of #head h3 reaches 80% of the viewport
-        end: "top 50%", // Animation can continue until it reaches 50%
-        scrub: 1, // Smooth animation effect while scrolling
-    }
-})
-
+let page2_h3Animation = () => {
+    gsap.from("#head h3", {
+        y: 500, 
+        opacity: 0, 
+        duration: 2, 
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: "#head",
+            start: "top 40%",  // Start animation when top of #head is 80% in viewport
+            toggleActions: "play none none none", 
+        }
+    });
+    gsap.from("#support p", {
+        y: 500, 
+        opacity: 0, 
+        duration: 3, 
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: "#head",
+            start: "top 40%",  // Start animation when top of #head is 80% in viewport
+            toggleActions: "play none none none", 
+        }
+    });
+    gsap.from("#support h6", {
+        y: 500, 
+        opacity: 0, 
+        duration: 3, 
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: "#head",
+            start: "top 40%",  // Start animation when top of #head is 80% in viewport
+            toggleActions: "play none none none", 
+        }
+    });
+    gsap.from("#page2 hr", {
+        y: -500, 
+        opacity: 0, 
+        duration: 2, 
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: "#head ",
+            start: "top 80%",  // Start animation when top of #head is 80% in viewport
+            toggleActions: "play none none none", 
+        }
+    });
 }
 page2_h3Animation()
