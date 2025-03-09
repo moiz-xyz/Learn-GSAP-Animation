@@ -1,4 +1,55 @@
-gsap.registerPlugin(ScrollTrigger);
+let locomotiveScroll = () =>{
+    gsap.registerPlugin(ScrollTrigger);
+
+// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smooth: true
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  }, 
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+}
+locomotiveScroll() ;
+let navbarAnimatoin = ()=>{
+    gsap.to("#nav-1 svg", {
+        transform : "translateY(-100%)",
+        scrollTrigger : {
+         trigger: "#page1",
+            scroller : "#main",
+            start : "top 0",
+            end : "top -5%",
+            scrub : true,
+        }
+    })
+    gsap.to("#nav-2 #links", {
+        transform : "translateY(-100%)",
+        opacity : 0,
+        scrollTrigger : {
+         trigger: "#page1",
+            scroller : "#main",
+            start : "top 0",
+            end : "top -5%",
+            scrub : true,
+        }
+    })
+}
+navbarAnimatoin()
+
 let videoAnimation = ()=>{
     let video_catiner = document.getElementById("video-catiner");
     let playbtn = document.getElementById("play");
@@ -50,42 +101,51 @@ let page2_h3Animation = () => {
         ease: "power3.out",
         scrollTrigger: {
             trigger: "#head",
-            start: "top 40%",  // Start animation when top of #head is 80% in viewport
-            toggleActions: "play none none none", 
+            start: "top 70%",  
+            toggleActions: "play none none none",
+            scroller: "#main"  
         }
     });
+
     gsap.from("#support p", {
         y: 500, 
         opacity: 0, 
         duration: 3, 
         ease: "power3.out",
         scrollTrigger: {
-            trigger: "#head",
-            start: "top 40%",  // Start animation when top of #head is 80% in viewport
-            toggleActions: "play none none none", 
+            trigger: "#support", // Correct trigger
+            start: "top 90%",  // Adjusted for better visibility
+            toggleActions: "play none none none",
+            scroller: "#main",
         }
     });
+    
     gsap.from("#support h6", {
         y: 500, 
         opacity: 0, 
         duration: 3, 
         ease: "power3.out",
         scrollTrigger: {
-            trigger: "#head",
-            start: "top 40%",  // Start animation when top of #head is 80% in viewport
-            toggleActions: "play none none none", 
+            trigger: "#support", 
+            start: "top 90%",  
+            toggleActions: "play none none none",
+            scroller: "#main",
         }
     });
+    
     gsap.from("#page2 hr", {
         y: -500, 
         opacity: 0, 
         duration: 2, 
         ease: "power3.out",
         scrollTrigger: {
-            trigger: "#head ",
-            start: "top 80%",  // Start animation when top of #head is 80% in viewport
-            toggleActions: "play none none none", 
+            trigger: "#page2 hr",
+            start: "top 80%",  
+            toggleActions: "play none none none",
+            scroller: "#main"  
         }
     });
+
+ 
 }
-page2_h3Animation()
+page2_h3Animation();

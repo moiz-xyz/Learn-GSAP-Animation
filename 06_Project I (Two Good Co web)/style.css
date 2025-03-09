@@ -12,12 +12,55 @@ body {
     color : white;
     background-color: black;
 }
+#nav {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+#nav-1{
+    height: 82px;
+    overflow: hidden;
+}
+#nav-1 > svg{
+    display: block;
+}
+#nav-2{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
+}
+#links {
+    padding: 10px;
+}
+#links a {
+    text-decoration: none;
+    color: black ;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+#icons{
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #f7f7f7;
+}
+#icons > i {
+    font-size: 18px;
+    margin: 0 20px;
+}
 #page1{
     width: 100%;
     min-height: 100vh;
     position: relative;
     padding: 0 1vw;
-    padding-top: 20vh;
+    padding-top: 40vh;
 }
 #page1 > h1 {
     font-size: 15.8vw;
