@@ -1,4 +1,4 @@
-let locomotiveScroll = () =>{
+    let locomotiveScroll = () =>{
     gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -149,3 +149,30 @@ let page2_h3Animation = () => {
  
 }
 page2_h3Animation();
+
+let productAnimaton = () => {
+    let product_Page = document.getElementById("page5");
+    let circle = document.getElementById("circle")
+
+    product_Page.addEventListener("mouseenter", ()=>{
+        gsap.to(circle, {
+            opacity : 1 ,
+            scale : 1, 
+        })
+    })
+    product_Page.addEventListener("mouseleave", ()=>{
+        gsap.to(circle, {
+            opacity : 0 ,
+            scale : 0, 
+        })
+    })
+    
+    product_Page.addEventListener("mousemove", (event)=>{
+        gsap.to(circle, {
+            left: event.x- 70,
+            top : event.y -80, 
+        })
+    })
+
+}
+productAnimaton()
