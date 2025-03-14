@@ -145,34 +145,78 @@ let page2_h3Animation = () => {
             scroller: "#main"  
         }
     });
-
- 
 }
 page2_h3Animation();
 
-let productAnimaton = () => {
-    let product_Page = document.getElementById("page5");
-    let circle = document.getElementById("circle")
+document.addEventListener("mousemove",  (event) =>{
+gsap.to("#circle", {
+    left : event.x,
+    top : event.y
+})
+})
 
-    product_Page.addEventListener("mouseenter", ()=>{
-        gsap.to(circle, {
-            opacity : 1 ,
-            scale : 1, 
-        })
-    })
-    product_Page.addEventListener("mouseleave", ()=>{
-        gsap.to(circle, {
-            opacity : 0 ,
-            scale : 0, 
-        })
-    })
-    
-    product_Page.addEventListener("mousemove", (event)=>{
-        gsap.to(circle, {
-            left: event.x- 70,
-            top : event.y -80, 
-        })
-    })
+let page5_circle_Animation = ()=> {
+    document.querySelectorAll(".child").forEach(element => {
+       element.addEventListener("mouseenter", ()=>{
+        gsap.to("#circle",{
+        transform: `translate(-50%,-50%) scale(1)`
 
+        })
+        element.addEventListener("mouseleave", ()=>{
+            gsap.to("#circle",{
+            transform: `translate(-50%,-50%) scale(0)`
+            })
+       }) 
+
+    });
+})
+gsap.from("#child1", {
+    y: 500, 
+    opacity: 0, 
+    duration: 2, 
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#page5",
+        start: "top 70%",  
+        toggleActions: "play none none none",
+        scroller: "#main"  
+    }
+});
+gsap.from("#child2", {
+    y: 500, 
+    opacity: 0, 
+    duration: 2, 
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#page5",
+        start: "top 70%",  
+        toggleActions: "play none none none",
+        scroller: "#main"  
+    }
+});
+gsap.from("#child3", {
+    y: 500, 
+    opacity: 0, 
+    duration: 2, 
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#child1",
+        start: "top 100%",  
+        toggleActions: "play none none none",
+        scroller: "#main"  
+    }
+});gsap.from("#child4", {
+    y: 500, 
+    opacity: 0, 
+    duration: 2, 
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#child2",
+        start: "top 100%",  
+        toggleActions: "play none none none",
+        scroller: "#main"  
+    }
+});
 }
-productAnimaton()
+page5_circle_Animation()
+
